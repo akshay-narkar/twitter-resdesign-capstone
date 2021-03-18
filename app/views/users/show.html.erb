@@ -1,0 +1,4 @@
+<%= @user.username %><br>
+<%= @user.fullname %>
+
+<%= link_to "Follow", followings_path(follower_id: session[:user_id], followed_id: @user.id), method: :create , class: "nav-link" %>>

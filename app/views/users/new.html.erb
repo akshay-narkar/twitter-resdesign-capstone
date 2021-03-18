@@ -1,0 +1,25 @@
+<h1>Sign Up</h1>
+
+
+<%= form_for :@user123 , url: users_path do |x| %>
+<p>
+    Username:
+    <%= x.text_field :username, class: "form-control" %>
+</p>
+<p>
+    Full Name:
+    <%= x.text_field :fullname, class: "form-control" %>
+</p>
+<p>
+    Photo:
+    <%= x.text_field :photo, class: "form-control" %>
+</p>
+
+<p>
+    CoverImage:
+    <%= x.text_field :coverimage, class: "form-control" %>
+</p>
+<p>
+    <%= x.submit 'Sign Up', class: "btn btn-primary" %>
+</p>
+<% end %>
