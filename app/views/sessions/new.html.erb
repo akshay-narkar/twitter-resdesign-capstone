@@ -1,0 +1,13 @@
+<h1>Login</h1>
+
+
+<%= form_for :@userlogin , url: sessions_path do |x| %>
+<p>
+    Username:
+    <%= x.text_field :username%>
+</p>
+
+<p>
+    <%= x.submit "Login" %>
+</p>
+<%end%>

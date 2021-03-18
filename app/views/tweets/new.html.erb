@@ -1,0 +1,13 @@
+<h1>Tweet page</h1>
+
+
+<%= simple_form_for :@tweet , url: tweets_path do |x| %>
+<p>
+    Content:
+    <%= x.text_area :text%>
+</p>
+
+<p>
+    <%= x.submit "Tweet" %>
+</p>
+<%end%>
