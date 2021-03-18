@@ -15,8 +15,8 @@ gem 'pg', '~> 1.2', '>= 1.2.3'
 # Use Puma as the app server
 # Use SCSS for stylesheets
 gem 'rubocop'
-
 gem 'sass-rails', '>= 6'
+gem 'sprockets-rails', '~> 3.0', '>= 3.0.4'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -38,9 +38,10 @@ gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 # gem 'capistrano-rails', group: :development
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
-gem 'bootstrap', '~> 4.6'
+gem 'bootstrap'
 gem 'devise'
 gem 'gravatar_image_tag', '~> 1.2'
+gem 'jquery-rails'
 gem 'simple_form', '~> 5.0', '>= 5.0.3'
 
 group :development, :test do
