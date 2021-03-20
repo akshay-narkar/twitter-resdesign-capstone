@@ -16,9 +16,9 @@ class UsersController < ApplicationController
     end
   end
 
-# builds = Build.order(:finished_at).includes(:branches).limit(10)
+  # builds = Build.order(:finished_at).includes(:branches).limit(10)
   def show
-    @user = User.find_by_id(params[:id] )
+    @user = User.find_by_id(params[:id])
     @tweet = @user.tweets.order(created_at: :desc)
     # y = @user.follows
     # y.each do |f|
@@ -27,9 +27,7 @@ class UsersController < ApplicationController
     @nonfollowing = User.all.order(created_at: :desc)
     @following = @user.follows
     @followers = @user.followers.includes(:followed)
-
   end
-
 
   private
 
@@ -38,22 +36,22 @@ class UsersController < ApplicationController
   end
 end
 
-# @nonfollowing.each do |f| 
+# @nonfollowing.each do |f|
 #     if f.id != @user.id && @follows.not_nil?
-#         @follows.each do |x| 
-#           if f.id == x.follows.id 
+#         @follows.each do |x|
+#           if f.id == x.follows.id
 #             break
 #             flag=1
 #           end
 #         end
-    
-#     if flag=1 
+
+#     if flag=1
 #        print f.fullname
 #     else
 #       flag=0
 #     end
 
-#   else 
+#   else
 #     print f.fullname if f.id!=@user.id
 #   end
 # end

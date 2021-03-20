@@ -14,7 +14,7 @@ class FollowingsController < ApplicationController
   def destroy
     delete = Following.find_by(followed_id: params[:followed_id], follower_id: params[:follower_id])
     if delete.destroy
-      user = User.find_by_id(session[:user_id]) 
+      user = User.find_by_id(session[:user_id])
       redirect_to user, notice: 'Unfollowed'
       # redirect_to friendship_path(current_user.id), method: :get, notice: 'Unfollowed'
     else

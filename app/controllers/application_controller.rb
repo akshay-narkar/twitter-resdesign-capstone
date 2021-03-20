@@ -1,13 +1,9 @@
 class ApplicationController < ActionController::Base
+  before_action :require_login
 
-    before_action :require_login
-
-private
+  private
 
   def require_login
-    
-    if session[:user_id].nil?
-       redirect_to new_session_path
-    end
+    redirect_to new_session_path if session[:user_id].nil?
   end
 end
