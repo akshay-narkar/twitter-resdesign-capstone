@@ -12,12 +12,13 @@
 </p>
 <p>
     Photo:
-    <%= x.text_field :photo, class: "form-control" %>
+    <%= x.file_field :photo,  class: "form-control" %>
 </p>
+
 
 <p>
     CoverImage:
-    <%= x.text_field :coverimage, class: "form-control" %>
+    <%= x.file_field :coverimage, class: "form-control" %>
 </p>
 <p>
     <%= x.submit 'Sign Up', class: "btn btn-primary" %>

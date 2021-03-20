@@ -1,4 +1,59 @@
-<%= @user.username %><br>
-<%= @user.fullname %>
+Follows: <%= @user.follows.count%><br>
+Tweets: <%= @user.tweets.count%><br>
+Followers : <%= @user.followers.count%><br>
 
-<%= link_to "Follow", followings_path(follower_id: session[:user_id], followed_id: @user.id), method: :create , class: "nav-link" %>>
+<% @tweet.each do |f| %>
+<br>
+<%= f.author.username %> -
+<%= f.text %> -
+<%= f.created_at%>
+<%end%>
+<br>
+<br>
+People to Follow
+
+<% @nonfollowing.each do |f| %>
+<%if f.id != @user.id && !@follows.nil?%>
+<%@following.each do |x| %>
+<% if f.id == x.follows.id %>
+<%break%>
+<%flag=1%>
+<%end%>
+<%end%>
+<%if flag=1 %>
+<%=f.fullname%>
+<%else%>
+<%flag=0%>
+<%end%>
+<%else%>
+<%=f.fullname if f.id!=@user.id%>
+<%end%>
+<%end%>
+
+<br>
+<br>
+
+<%= link_to "Follow", followings_path(follower_id: session[:user_id], followed_id: @user.id), method: :create , class: "nav-link" %>
+<%= link_to "Unfollow", following_path(follower_id: session[:user_id], followed_id: @user.id), method: :delete , class: "nav-link" %>
+
+
+<br>
+<br>
+
+Followed by
+
+<% @followers.each do |f| %>
+<br>
+<%= f.followed.fullname %> -
+<%= f.followed.username %> -
+<%end%>
+
+
+<%if @user.photo.attached? %>
+<%= image_tag @user.photo %>
+<%end%>
+
+
+<%if @user.coverimage.attached? %>
+<image src="<%=(url_for(@user.coverimage))%>">
+    <%end%>
