@@ -34,6 +34,7 @@ gem 'turbolinks', '~> 5'
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
+gem 'image_processing', '~> 1.12', '>= 1.12.1'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 # Reduces boot times through caching; required in config/boot.rb
