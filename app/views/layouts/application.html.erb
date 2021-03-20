@@ -8,40 +8,60 @@
     <%= csp_meta_tag %>
 
 
-
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
 <body>
-    <%= notice %>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <%=link_to "Twitter",root_path, class: "h5" %>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <%= link_to "Login",  new_session_path, class: "nav-link" %>
-                    </li>
+    <div class="wholepage">
+        <div class="1stsection">
+            <% if notice %>
+            <div class="p-3 mb-2 bg-danger text-white">
+                <%= notice %>
+            </div>
+            <%end%>
 
-                </ul>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <%=link_to "Twitter",root_path, class: "h5" %>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <%= link_to "Login",  new_session_path, class: "nav-link" %>
+                            </li>
+                            <li class="nav-item">
+                                <%= link_to "Tweet",  new_tweet_path, class: "nav-link" %>
+                            </li>
+                            <%unless session[:user_id].nil?%>
+                            <li class="nav-item">
+                                <%= link_to "Profile", user_path(session[:user_id]), class: "nav-link" %>
+                            </li>
+                            <%end%>
+                            <li class="nav-item">
+                                <%= link_to "Logout",  session_path("x"), method: :delete , class: "nav-link" %>
+                            </li>
+
+                        </ul>
 
 
-                <div class="d-flex px-4">
-                    <div>
+                        <div class="d-flex px-4">
+                            <div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </nav>
+
+            <div class="container">
+                <%= yield %>
             </div>
+
+
         </div>
-    </nav>
-
-    <div class="container">
-        <%= yield %>
-    </div>
-
 </body>
 
 </html>
