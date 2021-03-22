@@ -1,6 +1,10 @@
 class TweetsController < ApplicationController
   def new
-  @user = User.find_by_id(session[:user_id]) 
+    @user = User.find_by_id(session[:user_id])
+    @following = @user.followers.pluck(:followed_id)
+    @tweets = Tweet.all.order(created_at: :desc).includes(:author)
+    # @followers = @user.tweets.pluck(:author_id)
+    # @users = User.all.includes(:tweets,:follows)
   end
 
   def create
