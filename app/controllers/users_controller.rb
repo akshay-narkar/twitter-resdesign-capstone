@@ -6,14 +6,17 @@ class UsersController < ApplicationController
   end
 
   def create
+    unless session[:user_id].nil? 
+      redirect_to root_path, alert: 'Your are already logged in'
+    else
     @user = User.new(params_new)
-
     if @user.save
       redirect_to root_path, notice: 'Successfully created your account'
     #   redirect_to user_path(@user[:id]), notice: 'Successfully created your account. Login to create event'
     else
       redirect_to new_user_path, notice: 'Failed to create account. Try again'
     end
+  end
   end
 
   # builds = Build.order(:finished_at).includes(:branches).limit(10)
