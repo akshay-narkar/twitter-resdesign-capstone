@@ -33,16 +33,17 @@ gem 'turbolinks', '~> 5'
 # Install wdm Gem if the platform is Windows
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 # Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
+gem 'active_storage_validations'
 gem 'image_processing', '~> 1.12', '>= 1.12.1'
+gem 'mini_magick', '~> 4.8'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 # Reduces boot times through caching; required in config/boot.rb
-gem 'active_storage_validations'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap'
 gem 'devise'
 gem 'gravatar_image_tag', '~> 1.2'
+gem 'font-awesome-rails'
 gem 'jquery-rails'
 gem 'simple_form', '~> 5.0', '>= 5.0.3'
 
