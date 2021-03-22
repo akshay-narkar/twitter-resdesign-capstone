@@ -19,11 +19,10 @@
               </div>
           </nav>
           <br>
-          <br>
 
 
-          <div class="bg-white mx-5 px-3">
-              <div class="px-5 ">
+          <div class="bg-white mx-5 px-5">
+              <div>
                   <%= simple_form_for :@tweet , url: tweets_path do |x| %>
                   <h5 class="pt-4 pb-2">
                       Tweet Something:
@@ -36,14 +35,29 @@
                   </p>
 
                   <%end%>
-
               </div>
+          </div>
+          <br>
+          <div class="bg-white mx-5 px-5">
+              <div>
+                  <h5 class="pt-4 pb-2 text-primary border-bottom">
+                      All Tweets
+                  </h5>
+
+                  <% @tweets.each do |x| %>
+                  <%=checkiffollowed(x,@following)%>
+                  <%end%>
+              </div>
+
           </div>
       </div>
 
-      <div class="center-right">
-          <div>
-          </div>
+      <div class="center-right px-0 col-3 border">
+          <nav class="navbar mainsection border-bottom">
+              <p class="nav-link text-secondary text-uppercase mb-0">Who To Follow</p>
+          </nav>
+
+          <%= render 'tweets/whotofollow'%>
 
       </div>
 
