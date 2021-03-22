@@ -110,6 +110,7 @@ GEM
       activerecord (>= 5.a)
       database_cleaner-core (~> 2.0.0)
     database_cleaner-core (2.0.1)
+    date (3.0.0)
     devise (4.7.3)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -317,6 +318,9 @@ GEM
       sprockets (>= 3.0.0)
     thor (1.1.0)
     tilt (2.0.10)
+    time_diff (0.3.0)
+      activesupport
+      i18n
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
@@ -364,6 +368,7 @@ DEPENDENCIES
   cloudinary
   coffee-rails (~> 4.2)
   database_cleaner
+  date
   devise
   font-awesome-rails
   gravatar_image_tag (~> 1.2)
@@ -387,6 +392,7 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   sprockets-rails (~> 3.0, >= 3.0.4)
+  time_diff (~> 0.3.0)
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)

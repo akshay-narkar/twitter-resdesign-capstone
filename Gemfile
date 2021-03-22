@@ -41,11 +41,13 @@ gem 'mini_magick', '~> 4.8'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap'
+gem 'date'
 gem 'devise'
-gem 'gravatar_image_tag', '~> 1.2'
 gem 'font-awesome-rails'
+gem 'gravatar_image_tag', '~> 1.2'
 gem 'jquery-rails'
 gem 'simple_form', '~> 5.0', '>= 5.0.3'
+gem 'time_diff', '~> 0.3.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
