@@ -1,5 +1,7 @@
 class TweetsController < ApplicationController
-  def new; end
+  def new
+  @user = User.find_by_id(session[:user_id]) 
+  end
 
   def create
     @user = User.find_by_id(session[:user_id])
