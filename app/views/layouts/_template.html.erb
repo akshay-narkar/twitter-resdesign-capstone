@@ -1,0 +1,58 @@
+<%= notice1 %>
+
+<div class="wholepage container-fluid px-0 ">
+    <div class="row vh-100">
+        <div class="leftsection col-2 px-0">
+
+        </div>
+
+        <div class="mainsection col-10 px-0">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid px-0">
+                    <%= link_to root_path, class: "nav-link" do %>
+                    <i class="fa fa-twitter fa-3x text-white" aria-hidden="true"></i>
+                    <% end %>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                            <li class="nav-item">
+                                <%= link_to new_tweet_path, class: "text-white nav-link" do %>
+                                <i class="fa fa-edit fa-2x text-dark" aria-hidden="true"></i>
+                                <% end %>
+                            </li>
+                            <li class="nav-item">
+                                <%= link_to user_path(session[:user_id]), class: "nav-link text-white" do%>
+                                <i class="fa fa-user-circle fa-2x text-dark" aria-hidden="true"></i>
+                                <% end %>
+                            </li>
+                            <li class="nav-item">
+                                <%= link_to session_path("x"), method: :delete , class: "nav-link" do%>
+                                <i class="fa fa-power-off fa-2x text-dark" aria-hidden="true"></i>
+                                <% end %>
+                            </li>
+
+                        </ul>
+
+
+                    </div>
+                </div>
+            </nav>
+            <div class="container-fluid main-subsection">
+                <div class="row px-0 vh-100">
+                    <div class="center-left col-9 text-left text-dark">
+                        <br>
+                        <br>
+                        <%= yield %>
+                    </div>
+
+                    <div class="center-right col-3 border-left">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
