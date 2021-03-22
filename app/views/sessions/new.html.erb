@@ -1,16 +1,21 @@
-<h1>Login</h1>
+<div class="text-center my-5">
+    <h1>Login</h1>
+    <br>
+    <%=  simple_form_for :@userlogin , url: sessions_path do |x| %>
+    <p>
 
+        <%= x.text_field :username, placeholder:"Username", class: "form-control  w-25 mx-auto"%>
+    </p>
+    <p>
+        <%= x.submit "Login", class: "btn btn-primary" %>
+    </p>
+    <%end%>
+    <br>
 
-<%= form_for :@userlogin , url: sessions_path do |x| %>
-<p>
-    Username:
-    <%= x.text_field :username%>
-</p>
+    <h4 class="d-inline py-0"> New User?
 
-<p>
-    <%= x.submit "Login" %>
-</p>
-<%end%>
+        <%= link_to "Sign Up", new_user_path, class: "btn btn-dark btn-sm " %>
 
-<h3> New User? </h3>
-<%= link_to "Sign Up", new_user_path %>
+    </h4>
+
+</div>
