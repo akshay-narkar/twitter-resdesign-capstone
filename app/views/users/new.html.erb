@@ -1,26 +1,25 @@
-<h1>Sign Up</h1>
+<div class="text-center my-5">
+    <h1>Sign Up</h1>
 
+    <br>
+    <%=  simple_form_for :@user123 , url: users_path do |x| %>
+    <p class="w-50  mx-auto">
+        <%= x.text_field :username, placeholder: 'Username' ,class: "form-control"  %>
+    </p>
+    <p class="w-50  mx-auto">
+        <%= x.text_field :fullname, placeholder: 'Full Name' ,class: "form-control" %>
+    </p>
+    <p class="text-left w-50 mx-auto">Profile Picture:
+        <%= x.file_field :photo, label: 'Profile Picture', placeholder: 'Profile Photo' , class: "form-control " %>
 
-<%= form_for :@user123 , url: users_path do |x| %>
-<p>
-    Username:
-    <%= x.text_field :username, class: "form-control" %>
-</p>
-<p>
-    Full Name:
-    <%= x.text_field :fullname, class: "form-control" %>
-</p>
-<p>
-    Photo:
-    <%= x.file_field :photo,  class: "form-control" %>
-</p>
+    </p>
 
-
-<p>
-    CoverImage:
-    <%= x.file_field :coverimage, class: "form-control" %>
-</p>
-<p>
-    <%= x.submit 'Sign Up', class: "btn btn-primary" %>
-</p>
-<% end %>
+    <p class="text-left w-50 mx-auto">Cover Picture:
+        <%= x.file_field :coverimage,  placeholder: 'Cover Photo', class: "form-control " %>
+    </p>
+    <p class=" w-50 mx-auto">
+        <br>
+        <%= x.submit 'Sign Up', class: "btn btn-primary" %>
+    </p>
+    <% end %>
+</div>
