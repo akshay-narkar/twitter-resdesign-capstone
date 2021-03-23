@@ -56,8 +56,10 @@
           <nav class="navbar mainsection border-bottom">
               <p class="nav-link text-secondary text-uppercase mb-0">Who To Follow</p>
           </nav>
-
-          <%= render 'tweets/whotofollow'%>
+          <br>
+          <% @users.each do |x| %>
+          <%=checkiffollowing(x,@following)%>
+          <%end%>
 
       </div>
 

@@ -3,9 +3,8 @@
         <div class="top-part row py-3 align-items-center">
             <div class="photo col-xl-8 text-center">
 
-                <%if @user.photo.attached? %>
-                <%= image_tag @user.photo, class: "img-thumbnail" ,style: "width: 100px; height: 100px"; %>
-                <%end%>
+                <%= userphoto(@user) %>
+
             </div>
 
             <div class="name text-muted px-1 mt-1 col-xl-4 text-center pt-1 text-xl-left ">
@@ -38,7 +37,7 @@
 
         <div class="menu  row  pb-3 align-items-end justify-content-start">
             <%= link_to root_path do%>
-            <i class="fa fa-home fa-2x text-muted pl-5 " aria-hidden="true"></i>
+            <i class="fa fa-home fa-2x text-muted pl-4 " aria-hidden="true"></i>
             <%end%>
             <%= link_to root_path do%>
             <h6 class="px-3 text-muted font-weight-bold">HOME</h6>
@@ -48,7 +47,7 @@
 
         <div class="menu  row  pb-3 align-items-end justify-content-start">
             <%= link_to user_path(session[:user_id]) do%>
-            <i class="fa fa-user fa-2x text-muted pl-5" aria-hidden="true"></i>
+            <i class="fa fa-user fa-2x text-muted pl-4" aria-hidden="true"></i>
             <%end%>
             <%= link_to user_path(session[:user_id]) do%>
             <h6 class="px-3 text-muted font-weight-bold ">PROFILE</h6>
@@ -58,7 +57,7 @@
 
         <div class="menu  row  pb-3 align-items-end justify-content-start">
             <%= link_to new_tweet_path do%>
-            <i class="fa fa-edit fa-2x text-muted pl-5" , aria-hidden="true"></i>
+            <i class="fa fa-edit fa-2x text-muted pl-4" , aria-hidden="true"></i>
             <%end%>
             <%=link_to new_tweet_path do%>
             <h6 class="px-3 text-muted font-weight-bold ">TWEET</h6>
@@ -67,10 +66,10 @@
 
 
         <div class="menu  row  pb-3 align-items-end justify-content-start">
-            <%= link_to session_path("logout", method: :delete) do%>
-            <i class="fa fa-power-off fa-2x text-muted pl-5 " aria-hidden="true"></i>
+            <%= link_to session_path("logout"), method: :delete do%>
+            <i class="fa fa-power-off fa-2x text-muted pl-4 " aria-hidden="true"></i>
             <%end%>
-            <%= link_to session_path("logout", method: :delete) do%>
+            <%= link_to session_path("logout"), method: :delete do%>
             <h6 class="px-3 text-muted font-weight-bold">LOGOUT</h6>
             <%end%>
         </div>
