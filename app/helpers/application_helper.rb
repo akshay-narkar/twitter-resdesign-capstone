@@ -31,6 +31,31 @@ module ApplicationHelper
     render partial: 'tweets/whotofollow', locals: { notfollower: user }
   end
 
+  def followorunfollow
+    follarray = @followers.pluck(:follower_id)
+    return unless @profile != @user
+
+    if follarray.include?(@user.id)   
+            link_to "Unfollow", following_path(follower_id: session[:user_id], followed_id: @profile.id), method: :delete , class: "btn btn-danger"
+
+    else
+              link_to "Follow", followings_path(follower_id: session[:user_id], followed_id: @profile.id), method: :create , class: "btn btn-primary"
+
+    end
+  end
+
+  def followorunfollow1(follower)
+    viewerfol = @user.follows.pluck(:followed_id)
+
+    if viewerfol.include?(follower.id)   
+            link_to "Unfollow", following_path(follower_id: session[:user_id], followed_id: follower.id), method: :delete , class: "btn btn-danger"
+
+    else
+              link_to "Follow", followings_path(follower_id: session[:user_id], followed_id: follower.id), method: :create , class: "btn btn-primary"
+
+    end
+  end
+
   def timedifference(diff)
     if diff[:year] > 1
       "#{diff[:year]} Years ago"
@@ -66,4 +91,33 @@ module ApplicationHelper
       image_tag('icon.jpeg', size: '65x65', class: 'rounded-circle')
     end
   end
+
+  def followerphoto1(notfollower)
+    if notfollower.photo.attached?
+      image_tag notfollower.photo, class: 'rounded-circle', style: 'width: 100px; height: 100px'
+
+    else
+      image_tag('icon.jpeg', size: '100x100', class: 'rounded-circle')
+    end
+  end
+
+   def followerprofilephoto(notfollower)
+    if notfollower.photo.attached?
+      image_tag notfollower.photo, class: 'rounded-circle', style: 'width: 110px; height: 110px'
+
+    else
+      image_tag('icon.jpeg', size: '110x110', class: 'rounded-circle')
+    end
+  end
+
+   def coverphoto(profile)
+    if profile.coverimage.attached?
+      image_tag profile.photo, width: '100%', height: '300px'
+
+    else
+       image_tag('cover.jpeg', width: '100%', height: '300px' )
+    end
+  end
+
+
 end
