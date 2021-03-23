@@ -5,20 +5,20 @@ class FollowingsController < ApplicationController
     @follow = Following.new(follow_params)
 
     if @follow.save
-      redirect_to root_path, notice: 'Followed successfully'
+      redirect_to user_path(follow_params[:followed_id]), notice: 'Followed successfully'
     else
-      redirect_to new_tweet_path, notice: 'Failed to follow'
+      redirect_to user_path(follow_params[:followed_id]), alert: 'Failed to follow'
     end
   end
 
   def destroy
     delete = Following.find_by(followed_id: params[:followed_id], follower_id: params[:follower_id])
     if delete.destroy
-      user = User.find_by_id(session[:user_id])
-      redirect_to user, notice: 'Unfollowed'
+      # user = User.find_by_id(session[:user_id])
+      redirect_to user_path(delete_params[:followed_id]), notice: 'Unfollowed'
       # redirect_to friendship_path(current_user.id), method: :get, notice: 'Unfollowed'
     else
-      redirect_to user, notice: 'Failed to Unfollow'
+      redirect_to user_path(delete_params[:followed_id]), alert: 'Failed to Unfollow'
 
       # redirect_to friendship_path(current_user.id), method: :get, notice: 'Failed to unfollow. Please try again'
     end
