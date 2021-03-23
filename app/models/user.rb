@@ -7,6 +7,9 @@ class User < ApplicationRecord
   validates :username, presence: { message: 'Needs to be present' },
                        uniqueness: { message: 'Username already taken. Please try a new one' },
                        length: { minimum: 3, message: 'Username should be atleast 3 characters long' }
+  validates :fullname, presence: { message: 'Needs to be present' },
+                       length: { minimum: 3, message: 'Username should be atleast 3 characters long' }
 
-   validates :photo,:coverimage, attached: true, content_type: ['image/png', 'image/jpg'], size: { less_than: 500.kilobytes , message: 'size needs to be lesser than 500 kbs'}
+  validates :photo, attached: true, content_type: ['image/png', 'image/jpg', 'image/jpeg'], size: { less_than: 500.kilobytes , message: 'size needs to be lesser than 500 kbs'}
+  validates :coverimage, attached: true, content_type: ['image/png', 'image/jpg', 'image/jpeg'], size: { less_than: 500.kilobytes , message: 'size needs to be lesser than 500 kbs'}
 end
