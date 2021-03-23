@@ -1,8 +1,8 @@
 <%= notice1 %>
 
-<div class="wholepage container-fluid px-0 ">
+<div class="wholepage container-fluid px-1 ">
     <div class="row vh-100">
-        <div class="leftsection col-2 px-0">
+        <div class="leftsection col-2 px-3">
             <%= render 'users/profile' %>
         </div>
 
@@ -21,17 +21,17 @@
 
                             <li class="nav-item">
                                 <%= link_to new_tweet_path, class: "text-white nav-link" do %>
-                                <i class="fa fa-edit fa-2x text-dark" aria-hidden="true"></i>
+                                <i class="fa fa-edit fa-2x text-secondary" aria-hidden="true"></i>
                                 <% end %>
                             </li>
                             <li class="nav-item">
                                 <%= link_to user_path(session[:user_id]), class: "nav-link text-white" do%>
-                                <i class="fa fa-user-circle fa-2x text-dark" aria-hidden="true"></i>
+                                <i class="fa fa-user fa-2x text-secondary" aria-hidden="true"></i>
                                 <% end %>
                             </li>
                             <li class="nav-item">
                                 <%= link_to session_path("x"), method: :delete , class: "nav-link" do%>
-                                <i class="fa fa-power-off fa-2x text-dark" aria-hidden="true"></i>
+                                <i class="fa fa-power-off fa-2x text-secondary" aria-hidden="true"></i>
                                 <% end %>
                             </li>
 
