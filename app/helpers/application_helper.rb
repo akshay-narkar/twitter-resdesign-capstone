@@ -114,7 +114,7 @@ module ApplicationHelper
 
   def coverphoto(profile)
     if profile.coverimage.attached?
-      image_tag profile.photo, width: '100%', height: '300px'
+      image_tag profile.coverimage, width: '100%', height: '300px'
 
     else
       image_tag('https://res.cloudinary.com/akshayn/image/upload/v1616597161/cover_pb3dek.jpg', width: '100%', height: '300px')
