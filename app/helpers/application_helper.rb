@@ -81,7 +81,7 @@ module ApplicationHelper
       cl_image_tag user.photo, class: 'img-thumbnail', style: 'width: 75px; height: 75px'
 
     else
-      image_tag('icon.jpeg', size: '75x75', class: 'img-thumbnail')
+      image_tag('https://res.cloudinary.com/akshayn/image/upload/v1616597161/icon_efjywz.jpg', size: '75x75', class: 'img-thumbnail')
     end
   end
 
@@ -90,7 +90,7 @@ module ApplicationHelper
       cl_image_tag notfollower.photo, class: 'rounded-circle', style: 'width: 65px; height: 65px'
 
     else
-      image_tag('icon.jpeg', size: '65x65', class: 'rounded-circle')
+      image_tag('https://res.cloudinary.com/akshayn/image/upload/v1616597161/icon_efjywz.jpg', size: '65x65', class: 'rounded-circle')
     end
   end
 
@@ -99,7 +99,7 @@ module ApplicationHelper
       cl_image_tag notfollower.photo, class: 'rounded-circle', style: 'width: 100px; height: 100px'
 
     else
-      image_tag('icon.jpeg', size: '100x100', class: 'rounded-circle')
+      image_tag('https://res.cloudinary.com/akshayn/image/upload/v1616597161/icon_efjywz.jpg', size: '100x100', class: 'rounded-circle')
     end
   end
 
@@ -108,7 +108,7 @@ module ApplicationHelper
       cl_image_tag notfollower.photo, class: 'rounded-circle', style: 'width: 80px; height: 80px'
 
     else
-      image_tag('icon.jpeg', size: '80x80', class: 'rounded-circle')
+      image_tag('https://res.cloudinary.com/akshayn/image/upload/v1616597161/icon_efjywz.jpg', size: '80x80', class: 'rounded-circle')
     end
   end
 
@@ -117,7 +117,7 @@ module ApplicationHelper
       cl_image_tag profile.photo, width: '100%', height: '300px'
 
     else
-      image_tag('cover.jpeg', width: '100%', height: '300px')
+      image_tag('https://res.cloudinary.com/akshayn/image/upload/v1616597161/cover_pb3dek.jpg', width: '100%', height: '300px')
     end
   end
 end

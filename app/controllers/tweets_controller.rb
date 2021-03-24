@@ -1,6 +1,6 @@
 class TweetsController < ApplicationController
   def new
-    return unless session[:user_id].present? && User.first?
+    return unless session[:user_id].present? && User.first.present?
 
     @user = User.find_by_id(session[:user_id])
     @following = @user.follows.pluck(:followed_id)
