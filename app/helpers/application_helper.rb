@@ -47,7 +47,9 @@ module ApplicationHelper
   def followorunfollow1(follower)
     viewerfol = @user.follows.pluck(:followed_id)
 
-    if viewerfol.include?(follower.id)   
+    return if follower.id == session[:user_id]
+    
+    if viewerfol.include?(follower.id) 
             link_to "Unfollow", following_path(follower_id: session[:user_id], followed_id: follower.id), method: :delete , class: "btn btn-danger"
 
     else
