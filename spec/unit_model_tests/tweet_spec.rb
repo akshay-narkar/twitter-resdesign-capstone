@@ -5,7 +5,7 @@ describe Tweet, type: :model do
   subject { Tweet.new(author: user1, text: 'This is a tweet') }
 
   context 'Associations' do
-    it { should belong_to(:author),class_name: :User }
+    it { should belong_to(:author), class_name: :User }
   end
 
   context 'Validations' do

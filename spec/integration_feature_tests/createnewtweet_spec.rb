@@ -11,7 +11,7 @@ describe 'Tweet Building', type: :system do
     it 'they are on the timeline and create a tweet' do
       visit root_path
 
-     fill_in '_userlogin_username', with: username
+      fill_in '_userlogin_username', with: username
 
       click_button 'Login'
 

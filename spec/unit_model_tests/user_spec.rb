@@ -12,23 +12,24 @@ describe User, type: :model do
   context 'Validations' do
     it { should validate_presence_of(:username).with_message('Username needs to be present') }
     it { should validate_uniqueness_of(:username).with_message('Username already taken. Please try a new one') }
-    it{ should validate_length_of(:username)
+    it {
+      should validate_length_of(:username)
         .is_at_least(3)
         .with_message('Username should be atleast 3 characters long')
     }
     it { should validate_presence_of(:fullname).with_message('Fullname needs to be present') }
-     it{ should validate_length_of(:fullname)
+    it {
+      should validate_length_of(:fullname)
         .is_at_least(3)
         .with_message('Fullname should be atleast 3 characters long')
     }
 
+    it { should validate_content_type_of(:photo).allowing('image/png', 'image/jpg', 'image/jpeg') }
 
-   it {should validate_content_type_of(:photo).allowing('image/png', 'image/jpg','image/jpeg')}
-    
-   it {should validate_size_of(:photo).less_than(500.kilobytes) }
+    it { should validate_size_of(:photo).less_than(500.kilobytes) }
 
-    it {should validate_content_type_of(:coverimage).allowing('image/png', 'image/jpg','image/jpeg')}
-    
-    it {should validate_size_of(:coverimage).less_than(500.kilobytes)}
+    it { should validate_content_type_of(:coverimage).allowing('image/png', 'image/jpg', 'image/jpeg') }
+
+    it { should validate_size_of(:coverimage).less_than(500.kilobytes) }
   end
 end

@@ -32,4 +32,3 @@ class UsersController < ApplicationController
     params.require(:@user123).permit(:username, :fullname, :photo, :coverimage)
   end
 end
-

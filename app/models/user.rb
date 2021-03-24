@@ -12,6 +12,6 @@ class User < ApplicationRecord
 
   validates :photo, content_type: ['image/png', 'image/jpg', 'image/jpeg'],
                     size: { less_than: 500.kilobytes, message: 'Profile Picture size needs to be lesser than 500 kbs' }
-  validates :coverimage,  content_type: ['image/png', 'image/jpg', 'image/jpeg'],
+  validates :coverimage, content_type: ['image/png', 'image/jpg', 'image/jpeg'],
                          size: { less_than: 500.kilobytes, message: 'Coverimage size needs to be lesser than 500 kbs' }
 end

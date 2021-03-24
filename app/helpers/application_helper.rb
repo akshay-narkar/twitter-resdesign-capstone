@@ -35,11 +35,11 @@ module ApplicationHelper
     follarray = @followers.pluck(:follower_id)
     return unless @profile != @user
 
-    if follarray.include?(@user.id)   
-            link_to "Unfollow", following_path(follower_id: session[:user_id], followed_id: @profile.id), method: :delete , class: "btn btn-danger"
+    if follarray.include?(@user.id)
+      link_to 'Unfollow', following_path(follower_id: session[:user_id], followed_id: @profile.id), method: :delete, class: 'btn btn-danger'
 
     else
-              link_to "Follow", followings_path(follower_id: session[:user_id], followed_id: @profile.id), method: :create , class: "btn btn-primary"
+      link_to 'Follow', followings_path(follower_id: session[:user_id], followed_id: @profile.id), method: :create, class: 'btn btn-primary'
 
     end
   end
@@ -48,12 +48,12 @@ module ApplicationHelper
     viewerfol = @user.follows.pluck(:followed_id)
 
     return if follower.id == session[:user_id]
-    
-    if viewerfol.include?(follower.id) 
-            link_to "Unfollow", following_path(follower_id: session[:user_id], followed_id: follower.id), method: :delete , class: "btn btn-danger"
+
+    if viewerfol.include?(follower.id)
+      link_to 'Unfollow', following_path(follower_id: session[:user_id], followed_id: follower.id), method: :delete, class: 'btn btn-danger'
 
     else
-              link_to "Follow", followings_path(follower_id: session[:user_id], followed_id: follower.id), method: :create , class: "btn btn-primary"
+      link_to 'Follow', followings_path(follower_id: session[:user_id], followed_id: follower.id), method: :create, class: 'btn btn-primary'
 
     end
   end
@@ -103,7 +103,7 @@ module ApplicationHelper
     end
   end
 
-   def followerprofilephoto(notfollower)
+  def followerprofilephoto(notfollower)
     if notfollower.photo.attached?
       image_tag notfollower.photo, class: 'rounded-circle', style: 'width: 80px; height: 80px'
 
@@ -112,14 +112,12 @@ module ApplicationHelper
     end
   end
 
-   def coverphoto(profile)
+  def coverphoto(profile)
     if profile.coverimage.attached?
       image_tag profile.photo, width: '100%', height: '300px'
 
     else
-       image_tag('cover.jpeg', width: '100%', height: '300px' )
+      image_tag('cover.jpeg', width: '100%', height: '300px')
     end
   end
-
-
 end
