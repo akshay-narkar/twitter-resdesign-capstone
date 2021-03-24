@@ -32,45 +32,45 @@
         </div>
     </div>
 
-    <div class="py-4 container-fluid">
+    <div class="py-4 container">
 
 
-        <div class="menu  row  pb-3 align-items-end justify-content-start">
-            <%= link_to root_path do%>
-            <i class="fa fa-home fa-left   text-muted pl-4 " aria-hidden="true"></i>
+        <div class="menu  row  pb-3 align-items-end ">
+            <%= link_to root_path, class: "col-xl-3 text-center" do%>
+            <i class="fa fa-home fa-left   text-muted " aria-hidden="true"></i>
             <%end%>
-            <%= link_to root_path do%>
-            <h6 class="px-3 text-muted font-weight-bold">HOME</h6>
-            <%end%>
-        </div>
-
-
-        <div class="menu  row  pb-3 align-items-end justify-content-start">
-            <%= link_to user_path(session[:user_id]) do%>
-            <i class="fa fa-user fa-left  text-muted pl-4" aria-hidden="true"></i>
-            <%end%>
-            <%= link_to user_path(session[:user_id]) do%>
-            <h6 class="px-3 text-muted font-weight-bold ">PROFILE</h6>
+            <%= link_to root_path, class:" col-xl-9" do%>
+            <h6 class="right-padding-profile text-muted font-weight-bold">HOME</h6>
             <%end%>
         </div>
 
 
-        <div class="menu  row  pb-3 align-items-end justify-content-start">
-            <%= link_to new_tweet_path do%>
-            <i class="fa fa-edit fa-left  text-muted pl-4" , aria-hidden="true"></i>
+        <div class="menu  row  pb-3 align-items-end ">
+            <%= link_to user_path(session[:user_id]), class: "col-xl-3 text-center" do%>
+            <i class="fa fa-user fa-left  text-muted" aria-hidden="true"></i>
             <%end%>
-            <%=link_to new_tweet_path do%>
-            <h6 class="px-3 text-muted font-weight-bold ">TWEET</h6>
+            <%= link_to user_path(session[:user_id]), class:" col-xl-9" do%>
+            <h6 class="right-padding-profile text-muted font-weight-bold ">PROFILE</h6>
             <%end%>
         </div>
 
 
-        <div class="menu  row  pb-3 align-items-end justify-content-start">
-            <%= link_to session_path("logout"), method: :delete do%>
-            <i class="fa fa-power-off fa-left text-muted pl-4 " aria-hidden="true"></i>
+        <div class="menu  row  pb-3 align-items-end ">
+            <%= link_to new_tweet_path, class: "col-xl-3 text-center" do%>
+            <i class="fa fa-edit fa-left  text-muted" , aria-hidden="true"></i>
             <%end%>
-            <%= link_to session_path("logout"), method: :delete do%>
-            <h6 class="px-3 text-muted font-weight-bold">LOGOUT</h6>
+            <%=link_to new_tweet_path, class:" col-xl-9" do%>
+            <h6 class="right-padding-profile text-muted font-weight-bold ">TWEET</h6>
+            <%end%>
+        </div>
+
+
+        <div class="menu  row  pb-3 align-items-end ">
+            <%= link_to session_path("logout"), method: :delete, class: "col-xl-3 text-center" do%>
+            <i class="fa fa-power-off fa-left text-muted " aria-hidden="true"></i>
+            <%end%>
+            <%= link_to session_path("logout"), method: :delete, class:" col-xl-9" do%>
+            <h6 class="right-padding-profile text-muted font-weight-bold">LOGOUT</h6>
             <%end%>
         </div>
 

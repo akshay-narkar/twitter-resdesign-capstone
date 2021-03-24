@@ -35,7 +35,6 @@
 .fa-left {
   width: 16px;
   font-size: 32px;
-  padding-right: 24px;
 }
 
 html,
@@ -52,4 +51,8 @@ body {
 
 * {
   box-sizing: border-box;
+}
+
+.right-padding-profile {
+  padding-right: 0%;
 }
