@@ -1,14 +1,18 @@
   <div class="container-fluid pt-2 pb-3">
       <div class="tweet row align-items-center">
           <div class="photo col-lg-2">
-              <%= userphoto(@user) %>
+              <%= link_to tweet.author do %>
+              <%= userphoto(tweet.author) %>
+              <%end%>
           </div>
 
           <div class="content col-lg-10">
               <div class="row">
                   <div class="tweet-text col-lg-9">
                       <div class="text-muted">
+                          <%= link_to tweet.author do %>
                           <h6 class="text-capitalize font-weight-bold"> <%=tweet.author.fullname %> </h6>
+                          <%end%>
                           <p class="text-capitalize font-weight-light"> <%= tweet.text %> </p>
                       </div>
                   </div>
