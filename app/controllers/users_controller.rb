@@ -23,7 +23,6 @@ class UsersController < ApplicationController
     @profile = User.find_by_id(params[:id])
     @tweets = @profile.tweets.order(created_at: :desc)
     @followers = @profile.followers.includes(:follower).limit(5)
-    # @following = @profile.follows.includes(:followed)
   end
 
   private
