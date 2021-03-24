@@ -68,7 +68,7 @@ Design For Reference - https://www.behance.net/gallery/14286087/Twitter-Redesign
 
 ### ERD
 
-<img src="ERD.png"  width="1020px"/>
+<img src="ERD.png"  width="600px"/>
 
 ## Built With
 
@@ -78,6 +78,10 @@ Design For Reference - https://www.behance.net/gallery/14286087/Twitter-Redesign
 ## Live Demo
 
 #### [Banter Twitter](https://twitter-redesigned-akshay.herokuapp.com/)
+
+```
+username: leo
+```
 
 ## Getting Started
 
