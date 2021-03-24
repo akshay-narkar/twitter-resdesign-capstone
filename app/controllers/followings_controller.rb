@@ -24,6 +24,15 @@ class FollowingsController < ApplicationController
     end
   end
 
+
+  # def show 
+  #   @user = User.find_by_id(session[:user_id])
+  #   # @profile = User.find_by_id(params[:id])
+  #   @following = @user.follows.includes(:followed)
+  #   @follower = @user.followers.includes(:follower)
+  # end
+
+
   private
 
   def follow_params

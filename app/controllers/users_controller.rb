@@ -18,12 +18,12 @@ class UsersController < ApplicationController
     end
   end
 
-  # builds = Build.order(:finished_at).includes(:branches).limit(10)
   def show
     @user = User.find_by_id(session[:user_id])
     @profile = User.find_by_id(params[:id])
     @tweets = @profile.tweets.order(created_at: :desc)
     @followers = @profile.followers.includes(:follower).limit(5)
+    # @following = @profile.follows.includes(:followed)
   end
 
   private
