@@ -14,12 +14,12 @@
                 <%= x.text_field :fullname, placeholder: 'Full Name' ,class: "form-control" %>
             </p>
             <p class="text-left w-50 mx-auto">Profile Picture:
-                <%= x.file_field :photo, label: 'Profile Picture', placeholder: 'Profile Photo' , class: "form-control " %>
+                <%= x.file_field :photo, label: 'Profile Picture', placeholder: 'Profile Photo' , class: "form-control ", direct_upload: true %>
 
             </p>
 
             <p class="text-left w-50 mx-auto">Cover Picture:
-                <%= x.file_field :coverimage,  placeholder: 'Cover Photo', class: "form-control " %>
+                <%= x.file_field :coverimage,  placeholder: 'Cover Photo', class: "form-control ", direct_upload: true %>
             </p>
             <p class=" w-50 mx-auto">
                 <br>
