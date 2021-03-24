@@ -74,9 +74,9 @@ module ApplicationHelper
     end
   end
 
-  def userphoto(_user)
-    if @user.photo.attached?
-      image_tag @user.photo, class: 'img-thumbnail', style: 'width: 75px; height: 75px'
+  def userphoto(user)
+    if user.photo.attached?
+      image_tag user.photo, class: 'img-thumbnail', style: 'width: 75px; height: 75px'
 
     else
       image_tag('icon.jpeg', size: '75x75', class: 'img-thumbnail')
@@ -103,10 +103,10 @@ module ApplicationHelper
 
    def followerprofilephoto(notfollower)
     if notfollower.photo.attached?
-      image_tag notfollower.photo, class: 'rounded-circle', style: 'width: 110px; height: 110px'
+      image_tag notfollower.photo, class: 'rounded-circle', style: 'width: 80px; height: 80px'
 
     else
-      image_tag('icon.jpeg', size: '110x110', class: 'rounded-circle')
+      image_tag('icon.jpeg', size: '80x80', class: 'rounded-circle')
     end
   end
 
