@@ -1,8 +1,10 @@
-# Redesigning Twitter
+# Banter Twitter
 
 ## Project Specification
 
-Redesigning Twitter with provided reference and adding basic features
+Creating an MVP of redesigned twitter and using it for Football/Sports Banter! It has basic features of Twitter.
+
+## Built for screens above 1280px only!
 
 Design For Reference - https://www.behance.net/gallery/14286087/Twitter-Redesign-of-UI-details
 
@@ -38,23 +40,35 @@ Design For Reference - https://www.behance.net/gallery/14286087/Twitter-Redesign
    3. Stats: total number of tweets, number of followers and number of following users.
    4. List of people who follow this user.
 
-7. At the end extend your MVP app with one simple feature of your choice.
+7. At the end extend your MVP app with one simple feature of your choice. (Unfollow a user you have followed)
 
-#### Without logging in
+### Sign Up Page
 
-> ![screenshot](not_signed_in.png)
+<img src="signup.png" width="1020px"/>
 
-#### Logged in all users page
+### Login Page
 
-> ![screenshot](all_users.png)
+<img src="loginpage.png"  width="1020px"/>
 
-#### Friend Request
+### Home Page
 
-> ![screenshot](request_friend.png)
+<img src="homepage.png"  width="1020px"/>
 
-#### Accept or Decline Friendship page
+### Profile Page
 
-> ![screenshot](accept_decline_friend.png)
+<img src="profilepage.png"  width="1020px"/>
+
+### On Follow Page
+
+<img src="onfollow.png"  width="1020px"/>
+
+### Unfollowed
+
+<img src="unfollowed.png"  width="1020px"/>
+
+### ERD
+
+<img src="ERD.png"  width="1020px"/>
 
 ## Built With
 
@@ -63,39 +77,48 @@ Design For Reference - https://www.behance.net/gallery/14286087/Twitter-Redesign
 
 ## Live Demo
 
+#### [Banter Twitter](https://twitter-redesigned-akshay.herokuapp.com/)
+
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-Ruby: 2.7.2
-Rails: 6.1.3
-Postgres: >=9.5
+- Ruby: 2.7.2
+- Rails: 6.1.3
+- Postgres: >=9.5
+- Yarn: >= 1.22
 
 ### Setup
 
-Install gems with:
+- Clone this repository
 
-```
-bundle install
-```
+  ```
+   git clone git@github.com:akshay-narkar/twitter-resdesign-capstone.git)
 
-Setup database with:
+  ```
 
-```
-   rails db:create
-   rails db:migrate
-```
+- Open terminal
+- Change directory by using
 
-### Github Actions
+  ```
+  cd twitter-redesign-capstone
 
-To make sure the linters' checks using Github Actions work properly, you should follow the next steps:
+  ```
 
-1. On your recently forked repo, enable the GitHub Actions in the Actions tab.
-2. Create the `feature/branch` and push.
-3. Start working on your milestone as usual.
-4. Open a PR from the `feature/branch` when your work is done.
+- Install gems with:
+
+  ```
+  bundle install
+  ```
+
+- Setup database with:
+
+  ```
+     rails db:create
+     rails db:migrate
+  ```
 
 ### Usage
 
@@ -110,19 +133,29 @@ Open `http://localhost:3000/` in your browser.
 ### Run tests
 
 ```
-    rpsec --format documentation
+    bundle exec rspec
 ```
 
 ### Deployment
 
 From console run the following commands after cloning
 
-```
-   heroku login (login to heroku)
-   heroku create stayintouch (or any app name you like)
-   git push heroku main (pushing from the main branch)
-
-```
+- Sign in Heroku.
+- Open your terminal.
+- Run
+  ```
+  heroku login.
+  ```
+- If you get any error, run
+  ```
+  sudo snap install --classic heroku
+  ```
+  ```
+  heroku create twitter-redesign (or any app name you like)
+  ```
+  ```
+  git push heroku main (pushing from the main branch to main branch on heroku)
+  ```
 
 ## Authors
 
