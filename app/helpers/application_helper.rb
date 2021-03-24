@@ -78,7 +78,7 @@ module ApplicationHelper
 
   def userphoto(user)
     if user.photo.attached?
-      image_tag user.photo, class: 'img-thumbnail', style: 'width: 75px; height: 75px'
+      cl_image_tag user.photo, class: 'img-thumbnail', style: 'width: 75px; height: 75px'
 
     else
       image_tag('icon.jpeg', size: '75x75', class: 'img-thumbnail')
@@ -87,7 +87,7 @@ module ApplicationHelper
 
   def followerphoto(notfollower)
     if notfollower.photo.attached?
-      image_tag notfollower.photo, class: 'rounded-circle', style: 'width: 65px; height: 65px'
+      cl_image_tag notfollower.photo, class: 'rounded-circle', style: 'width: 65px; height: 65px'
 
     else
       image_tag('icon.jpeg', size: '65x65', class: 'rounded-circle')
@@ -96,7 +96,7 @@ module ApplicationHelper
 
   def followerphoto1(notfollower)
     if notfollower.photo.attached?
-      image_tag notfollower.photo, class: 'rounded-circle', style: 'width: 100px; height: 100px'
+      cl_image_tag notfollower.photo, class: 'rounded-circle', style: 'width: 100px; height: 100px'
 
     else
       image_tag('icon.jpeg', size: '100x100', class: 'rounded-circle')
@@ -105,7 +105,7 @@ module ApplicationHelper
 
   def followerprofilephoto(notfollower)
     if notfollower.photo.attached?
-      image_tag notfollower.photo, class: 'rounded-circle', style: 'width: 80px; height: 80px'
+      cl_image_tag notfollower.photo, class: 'rounded-circle', style: 'width: 80px; height: 80px'
 
     else
       image_tag('icon.jpeg', size: '80x80', class: 'rounded-circle')
@@ -114,7 +114,7 @@ module ApplicationHelper
 
   def coverphoto(profile)
     if profile.coverimage.attached?
-      image_tag profile.photo, width: '100%', height: '300px'
+      cl_image_tag profile.photo, width: '100%', height: '300px'
 
     else
       image_tag('cover.jpeg', width: '100%', height: '300px')
