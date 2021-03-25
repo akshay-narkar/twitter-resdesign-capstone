@@ -2,7 +2,6 @@ class ApplicationController < ActionController::Base
   before_action :require_login
   before_action :already_loggedin
 
-
   private
 
   def require_login
