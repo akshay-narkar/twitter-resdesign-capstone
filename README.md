@@ -42,33 +42,13 @@ Design For Reference - https://www.behance.net/gallery/14286087/Twitter-Redesign
 
 7. At the end extend your MVP app with one simple feature of your choice. (Unfollow a user you have followed)
 
-### Sign Up Page
+### App Walkthrough GIF
 
-<img src="signup.png" width="1020px"/>
-
-### Login Page
-
-<img src="loginpage.png"  width="1020px"/>
-
-### Home Page
-
-<img src="homepage.png"  width="1020px"/>
-
-### Profile Page
-
-<img src="profilepage.png"  width="1020px"/>
-
-### On Follow Page
-
-<img src="onfollow.png"  width="1020px"/>
-
-### Unfollowed
-
-<img src="unfollowed.png"  width="1020px"/>
+<img src="app.gif" />
 
 ### ERD
 
-<img src="ERD.png"  width="600px"/>
+<img src="ERD.png"  width="500px"/>
 
 ## Built With
 
