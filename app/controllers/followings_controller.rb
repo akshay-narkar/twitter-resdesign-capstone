@@ -2,6 +2,14 @@ class FollowingsController < ApplicationController
   skip_before_action :already_loggedin
   def new; end
 
+  def index
+    return unless session[:user_id].present? && User.first.present?
+
+    @user = User.find_by_id(session[:user_id])
+    @following = @user.follows.includes(:followed)
+    @followers = @user.followers.includes(:follower)
+  end
+
   def create
     @follow = Following.new(follow_params)
 
