@@ -9,7 +9,6 @@ class FollowingsController < ApplicationController
     @following = @user.follows.pluck(:followed_id)
     @followings = @user.follows.includes(:followed)
     @users = User.all.order(created_at: :desc)
-
   end
 
   def create
