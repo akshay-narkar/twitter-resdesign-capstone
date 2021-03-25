@@ -17,7 +17,7 @@ module ApplicationHelper
   end
 
   def checkiffollowed(tweet, following)
-    return unless following.include?(tweet.author_id)
+    return unless following.include?(tweet.author_id) || tweet.author_id == @user.id
 
     diff = Time.diff(tweet.created_at, Time.now)
     diff1 = timedifference(diff)
