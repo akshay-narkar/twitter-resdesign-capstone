@@ -44,9 +44,8 @@
                       All Tweets
                   </h5>
 
-                  <% @tweets.each do |x| %>
-                  <%=checkiffollowed(x,@following)%>
-                  <%end%>
+                  <%= render partial: "tweet", collection: @tweets %>
+
               </div>
 
           </div>
@@ -57,9 +56,8 @@
               <p class="nav-link text-secondary text-uppercase mb-0">Who To Follow</p>
           </nav>
           <br>
-          <% @users.each do |x| %>
-          <%=checkiffollowing(x,@following)%>
-          <%end%>
+          <%= render partial: "user", collection: @users %>
+
 
       </div>
 

@@ -3,19 +3,19 @@
          <div class="tweet mx-auto">
 
              <div class="photo">
-                 <%= link_to user_path(follower.follower) do%>
-                 <%= followerprofilephoto(follower.follower) %>
+                 <%= link_to user_path(followedby.follower) do%>
+                 <%= followerprofilephoto(followedby.follower) %>
                  <%end%>
              </div>
 
              <div class="content">
                  <div class="tweet-text">
                      <div class="text-muted">
-                         <%= link_to user_path(follower.follower), class: "text-dark" do%>
-                         <h5 class="text-capitalize font-weight-bold pt-2"> <%=follower.follower.fullname %> </h5>
+                         <%= link_to user_path(followedby.follower), class: "text-dark" do%>
+                         <h5 class="text-capitalize font-weight-bold pt-2"> <%=followedby.follower.fullname %> </h5>
                          <%end%>
                          <p class="text-capitalize font-weight-light">
-                             <%=followorunfollow1(follower.follower) %>
+                             <%=followorunfollow1(followedby.follower) %>
                          </p>
                      </div>
                  </div>

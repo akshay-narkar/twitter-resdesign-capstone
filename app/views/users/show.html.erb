@@ -35,10 +35,7 @@
                   <h5 class="pt-4 pb-2 text-primary border-bottom">
                       All Tweets
                   </h5>
-
-                  <% @tweets.each do |x| %>
-                  <%= render partial: 'users/usertweets', locals: {tweet: x} %>
-                  <%end%>
+                  <%= render partial: "tweet", collection: @tweets %>
               </div>
 
           </div>
@@ -93,10 +90,7 @@
                       <p class="nav-link text-muted text-uppercase mb-0 font-weight-bold px-0">Followed By</p>
                   </nav>
                   <br>
-
-                  <% @followers.each do |x| %>
-                  <%=render partial: 'followedby', locals:{follower: x } %>
-                  <%end%>
+                  <%= render partial: "followedby", collection: @followers %>
 
               </div>
 
