@@ -1,4 +1,6 @@
 class TweetsController < ApplicationController
+  skip_before_action :already_loggedin 
+
   def new
     return unless session[:user_id].present? && User.first.present?
 

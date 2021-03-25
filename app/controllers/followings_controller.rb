@@ -1,4 +1,5 @@
 class FollowingsController < ApplicationController
+  skip_before_action :already_loggedin
   def new; end
 
   def create
