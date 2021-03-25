@@ -7,10 +7,10 @@
         </div>
 
         <div class="mainsection col-10 px-0">
-            <nav class="navbar navbar-expand-lg navbar-light">
+            <nav class="navbar navbar-expand-lg navbar-light py-0">
                 <div class="container-fluid px-0">
                     <%= link_to root_path, class: "nav-link" do %>
-                    <i class="fa fa-twitter fa-3x text-white" aria-hidden="true"></i>
+                    <i class="fa fa-twitter fa-2x text-white" aria-hidden="true"></i>
                     <% end %>
 
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,17 +21,17 @@
 
                             <li class="nav-item">
                                 <%= link_to new_tweet_path, class: "text-white nav-link" do %>
-                                <i class="fa fa-edit fa-2x text-secondary" aria-hidden="true"></i>
+                                <i class="fa fa-edit fa-right text-secondary" aria-hidden="true"></i>
                                 <% end %>
                             </li>
                             <li class="nav-item">
                                 <%= link_to user_path(session[:user_id]), class: "nav-link text-white" do%>
-                                <i class="fa fa-user fa-2x text-secondary" aria-hidden="true"></i>
+                                <i class="fa fa-user fa-right text-secondary" aria-hidden="true"></i>
                                 <% end %>
                             </li>
                             <li class="nav-item">
                                 <%= link_to session_path("x"), method: :delete , class: "nav-link" do%>
-                                <i class="fa fa-power-off fa-2x text-secondary" aria-hidden="true"></i>
+                                <i class="fa fa-power-off fa-right text-secondary" aria-hidden="true"></i>
                                 <% end %>
                             </li>
 
