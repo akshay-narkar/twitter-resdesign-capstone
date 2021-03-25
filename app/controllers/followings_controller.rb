@@ -6,8 +6,10 @@ class FollowingsController < ApplicationController
     return unless session[:user_id].present? && User.first.present?
 
     @user = User.find_by_id(session[:user_id])
-    @following = @user.follows.includes(:followed)
-    @followers = @user.followers.includes(:follower)
+    @following = @user.follows.pluck(:followed_id)
+    @followings = @user.follows.includes(:followed)
+    @users = User.all.order(created_at: :desc)
+
   end
 
   def create
