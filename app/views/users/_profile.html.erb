@@ -19,7 +19,7 @@
     <div class="followerstat px-3 border-bottom ">
         <div class="px-1 row">
             <div class="py-3 col-xl-6 px-0 text-muted text-center">
-                <%= link_to followings_path do%>
+                <%= link_to followings_path, class: "text-muted" do%>
                 <h6 class="font-weight-bold"> <%=@user.follows.count %> </h6>
                 <h6 class="font-weight-bold"> Following </h6>
                 <%end%>
