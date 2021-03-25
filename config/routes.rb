@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :create, :show, :new]
   resources :tweets, only: [:new, :create]
   resources :sessions, only: [:new, :create,:destroy]
-  resources :followings, only: [:new,:create,:destroy]
+  resources :followings, only: [:new,:create,:destroy,:index]
 end
