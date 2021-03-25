@@ -1,0 +1,34 @@
+<div class="container pt-2 pb-3 text-center">
+    <div class="tweet row align-items-center">
+        <div class="photo col-lg-2">
+            <%= link_to followings.followed do %>
+            <%= userphoto(followings.followed) %>
+            <%end%>
+        </div>
+
+        <div class="content col-lg-10">
+            <div class="row align-items-center">
+                <div class="tweet-text col-lg-9">
+                    <div class="text-muted">
+                        <%= link_to followings.followed, class: "text-muted" do %>
+                        <h5 class="text-capitalize font-weight-bold"> <%=followings.followed.fullname %> </h5>
+                        <h6 class="text-capitalize font-weight-light mb-0"> @<%= followings.followed.fullname %> </h6>
+
+                        <%end%>
+
+                    </div>
+                </div>
+
+                <div class="tweet-time col-lg-3">
+                    <div class="time text-center">
+                        <p class="text-capitalize font-weight-light mb-0">
+
+                            <%= link_to 'Unfollow', following_path(follower_id: session[:user_id], followed_id: followings.followed.id, id:'none'), method: :delete, class: 'btn btn-danger'  %>
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
