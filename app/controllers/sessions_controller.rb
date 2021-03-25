@@ -16,9 +16,6 @@ class SessionsController < ApplicationController
     end
   end
 
-  def show; end
-
-  def index; end
 
   def destroy
     reset_session
