@@ -9,7 +9,7 @@ describe 'UnFollowing action', type: :system do
   let(:username) { 'michaelj' }
 
   context 'Login as a new user & ' do
-    it 'Follow the first user there succesfully and then unfollow as well' do
+    it 'Follow the first user there succesfully' do
       visit root_path
 
       fill_in '_userlogin_username', with: username
@@ -18,9 +18,7 @@ describe 'UnFollowing action', type: :system do
 
       click_link 'Follow'
 
-      click_link 'Mike'
-
-      expect(page).to have_content('@michaelj')
+      expect(page).to have_content('Unfollow')
     end
   end
 end
