@@ -1,0 +1,31 @@
+<div class="text-center my-5">
+
+    <div class="card mx-auto" style="width:60rem">
+        <div class="card-body">
+            <h2 class="card-title py-3">Sign Up
+            </h2>
+
+
+            <%=  simple_form_for :@user123 , url: users_path do |x| %>
+            <p class="w-50  mx-auto">
+                <%= x.text_field :username, placeholder: 'Username' ,class: "form-control"  %>
+            </p>
+            <p class="w-50  mx-auto">
+                <%= x.text_field :fullname, placeholder: 'Full Name' ,class: "form-control" %>
+            </p>
+            <p class="text-left w-50 mx-auto">Profile Picture:
+                <%= x.file_field :photo, label: 'Profile Picture', placeholder: 'Profile Photo' , class: "form-control ", direct_upload: true %>
+
+            </p>
+
+            <p class="text-left w-50 mx-auto">Cover Picture:
+                <%= x.file_field :coverimage,  placeholder: 'Cover Photo', class: "form-control ", direct_upload: true %>
+            </p>
+            <p class=" w-50 mx-auto">
+                <br>
+                <%= x.submit 'Sign Up', class: "btn btn-primary" %>
+            </p>
+            <% end %>
+        </div>
+    </div>
+</div>

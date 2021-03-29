@@ -1,0 +1,27 @@
+ <div class="px-2 mx-2">
+     <div class="container-fluid pt-2 pb-3">
+         <div class="tweet row mx-auto">
+
+             <div class="photo col-xl-3 ">
+                 <%= link_to user_path(notfollower) do%>
+                 <%= followerphoto(notfollower) %>
+                 <%end%>
+             </div>
+
+             <div class="content col-xl-9">
+                 <div class="row">
+                     <div class="tweet-text col-xl-12 pl-5">
+                         <div class="text-muted">
+                             <%= link_to user_path(notfollower), class: "text-dark" do%>
+                             <h6 class="text-capitalize font-weight-bold"> <%=notfollower.fullname %> </h6>
+                             <%end%>
+                             <p class="text-capitalize font-weight-light">
+                                 <%= link_to "Follow", followings_path(follower_id: session[:user_id], followed_id: notfollower.id), method: :create , class: "btn btn-primary btn-sm" %>
+                             </p>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div>

@@ -1,0 +1,61 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+ */
+
+@import "bootstrap";
+
+.navbar {
+  background-color: #52a6e7;
+}
+
+.leftsection {
+  background-color: #213346;
+}
+
+.mainsection {
+  background-color: #f5f6f8;
+}
+
+.white-color {
+  color: white;
+}
+
+.fa-left {
+  width: 16px;
+  font-size: 32px;
+}
+
+.fa-right {
+  font-size: 25px;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* use viewport-relative units to cover page fully */
+body {
+  height: 100vh;
+  width: 100vw;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.right-padding-profile {
+  padding-right: 0%;
+}

@@ -1,0 +1,24 @@
+<div class="text-center my-5">
+
+    <div class="card mx-auto" style="width:35rem">
+        <div class="card-body">
+            <h2 class="card-title py-2">Login</h2>
+
+            <%=  simple_form_for :@userlogin , url: sessions_path do |x| %>
+            <p class="py-1">
+
+                <%= x.text_field :username, placeholder:"Username", class: "form-control w-50 mx-auto"%>
+            </p>
+            <p class="pb-3">
+                <%= x.submit "Login", class: "btn btn-primary btn" %>
+            </p>
+            <%end%>
+
+            <h5 class="d-inline py-0"> New User?
+
+                <%= link_to "Sign Up", new_user_path, class: "btn btn-dark btn-sm " %>
+
+            </h5>
+
+        </div>
+    </div>

@@ -1,0 +1,91 @@
+<div>
+    <div class="px-3 border-bottom ">
+        <div class="top-part row py-3 align-items-center">
+            <div class="photo col-xl-7 text-center">
+                <%= link_to user_path(session[:user_id]) do%>
+                <%= userphoto(@user) %>
+                <%end%>
+            </div>
+
+            <div class="name text-muted px-1 mt-1 col-xl-5 text-center pt-1 text-xl-left ">
+                <%= link_to user_path(session[:user_id]), class: "text-muted" do%>
+                <h5 class="text-capitalize font-weight-bold"> <%=@user.fullname %> </h5>
+                <%end%>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="followerstat px-3 border-bottom ">
+        <div class="px-1 row">
+            <div class="py-3 col-xl-6 px-0 text-muted text-center">
+                <%= link_to followings_path, class: "text-muted" do%>
+                <h6 class="font-weight-bold"> <%=@user.follows.count %> </h6>
+                <h6 class="font-weight-bold"> Following </h6>
+                <%end%>
+            </div>
+
+            <div class="py-3 col-xl-6 px-0 text-muted text-center">
+
+                <h6 class="font-weight-bold"> <%=@user.followers.count %> </h6>
+                <h6 class="font-weight-bold"> Followers </h6>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="py-4 container">
+
+
+        <div class="menu  row  pb-3 align-items-end ">
+            <%= link_to root_path, class: "col-xl-3 text-center" do%>
+            <i class="fa fa-home fa-left   text-muted " aria-hidden="true"></i>
+            <%end%>
+            <%= link_to root_path, class:" col-xl-9" do%>
+            <h6 class="right-padding-profile text-muted font-weight-bold">HOME</h6>
+            <%end%>
+        </div>
+
+
+        <div class="menu  row  pb-3 align-items-end ">
+            <%= link_to user_path(session[:user_id]), class: "col-xl-3 text-center" do%>
+            <i class="far fa-user fa-left  text-muted" aria-hidden="true"></i>
+            <%end%>
+            <%= link_to user_path(session[:user_id]), class:" col-xl-9" do%>
+            <h6 class="right-padding-profile text-muted font-weight-bold ">PROFILE</h6>
+            <%end%>
+        </div>
+
+
+        <div class="menu  row  pb-3 align-items-end ">
+            <%= link_to new_tweet_path, class: "col-xl-3 text-center" do%>
+            <i class="fa fa-edit fa-left  text-muted" , aria-hidden="true"></i>
+            <%end%>
+            <%=link_to new_tweet_path, class:" col-xl-9" do%>
+            <h6 class="right-padding-profile text-muted font-weight-bold ">TWEET</h6>
+            <%end%>
+        </div>
+
+        <div class="menu  row  pb-3 align-items-end ">
+            <%= link_to followings_path, class: "col-xl-3 text-center" do%>
+            <i class="fas fa-users fa-left text-muted " aria-hidden="true"></i>
+            <%end%>
+            <%= link_to followings_path, class:" col-xl-9" do%>
+            <h6 class="right-padding-profile text-muted font-weight-bold">FOLLOWING</h6>
+            <%end%>
+        </div>
+
+
+        <div class="menu  row  pb-3 align-items-end ">
+            <%= link_to session_path("logout"), method: :delete, class: "col-xl-3 text-center" do%>
+            <i class="fa fa-power-off fa-left text-muted " aria-hidden="true"></i>
+            <%end%>
+            <%= link_to session_path("logout"), method: :delete, class:" col-xl-9" do%>
+            <h6 class="right-padding-profile text-muted font-weight-bold">LOGOUT</h6>
+            <%end%>
+        </div>
+
+
+
+    </div>
+</div>
